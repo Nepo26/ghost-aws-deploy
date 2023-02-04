@@ -32,3 +32,9 @@ override.tf.json
 # Ignore CLI configuration files
 .terraformrc
 terraform.rc
+/infra/terraform/aws/.terraform/
+/infra/terraform/aws/awscliv2.zip
+/infra/terraform/aws/terraform.tfstate.backup
+/infra/terraform/aws/terraform.tfstate
+/infra/terraform/aws/.terraform.lock.hcl
+/infra/terraform/aws/aws/
