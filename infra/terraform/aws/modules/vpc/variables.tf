@@ -1,17 +1,21 @@
-variable "application_name" {
-  type        = string
-  default     = "napoleon-shortener"
-  description = "Name of the application"
+variable "app" {
+  type = string
 }
 
-variable "lb_ports" {
-  type        = map(number)
-  default     = {80:80, 443:443, 4215:4215}
-  description = "List of ports to allow access on the load balancer"
+variable "public_subnet_cidrs" {
+  type = list(string)
+  description = "Public Subnet CIDR values"
+  default = ["10.0.0.1/24","10.0.0.2/24", "10.0.0.3/24"]
 }
 
-variable "ecs_task_ports" {
-  type        = map(number)
-  default     = {80:80}
-  description = "List of ports to allow access on the container"
+variable "private_subnet_cidrs" {
+  type = list(string)
+  description = "Private Subnet CIDR values"
+  default =  ["10.0.4.0/24", "10.0.5.0/24", "10.0.6.0/24"]
+}
+variable "azs" {
+  type        = list(string)
+  description = "Availability Zones"
+  default     = ["us-east-1a", "us-east-1b", "us-east-1c"]
+
 }
