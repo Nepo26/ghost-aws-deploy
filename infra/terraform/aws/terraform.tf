@@ -6,8 +6,6 @@ terraform {
     key = "terraform.tfstate"
     region = "us-east-1"
     dynamodb_table = "urutausec-terraform-state-lock"
-    access_key = "AKIA3FBB6FP672TTYW6N"
-    secret_key = "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"
   }
 
   required_providers {
