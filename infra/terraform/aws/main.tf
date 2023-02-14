@@ -1,7 +1,6 @@
 provider "aws" {
   region  = var.awsregion
-  access_key = var.AWS_ACCESS_KEY
-  secret_key = var.AWS_SECRET_KEY
+  shared_credentials_files = ["~/.aws/credentials"]
 }
 
 #module "vpc" {
@@ -28,12 +27,12 @@ module "vpc" {
   app = var.app
 }
 
-#module "ec2" {
-#  source = "./modules/ec2"
-#
-#  ami_id              = ""
-#  ami_key_pair_name   = ""
-#  instance_type       = "t2.small"
-#  number_of_instances = 1
-#  subnet_id           = vpc.public_subnet_id
-#}
+module "ec2" {
+  source = "./modules/ec2"
+
+  ami_id              = ""
+  ami_key_pair_name   = ""
+  instance_type       = "t2.small"
+  number_of_instances = 1
+  subnet_id           = vpc.public_subnet_id
+}
